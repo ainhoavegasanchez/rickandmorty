@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #container
+    ul
+        each personaje in personajes    
+            li
+                a.link-opacity-100(href='/personaje' id=personaje.id)=personaje.name
+                    
+            

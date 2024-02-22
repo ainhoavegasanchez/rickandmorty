@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    #container
+        h1 Vista del personaje
+            .card(style='width: 18rem;')
+                img.card-img-top(src=personaje.image alt='Card image cap')
+                .card-body
+                    h5.card-title=personaje.name
+                    p.card-text=personaje.gender
+                    p.card-text=fecha
+                    a(href=personaje.url) Descarga su ficha
+                    p
+                        a.link-opacity-100(href='/personaje/todos') Lista completa

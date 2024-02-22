@@ -5,7 +5,7 @@ const personajeSchema = new mongoose.Schema({
     gender:String,
     image:String,
     url:String,
-    created:Date
+    created:String
 });
 
 const Personaje = mongoose.model('Personaje', personajeSchema);

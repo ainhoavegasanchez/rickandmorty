@@ -5,6 +5,4 @@ block content
     ul
         each personaje in personajes    
             li
-                a.link-opacity-100(href='/personaje' id=personaje.id)=personaje.name
-                    
-            
+                a.link-opacity-100(href='`/personajes/${personaje.id}`'  id=personaje.id)=personaje.name

@@ -26,8 +26,17 @@ router.get('/todos', async (req, res, next) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        const personaje = await Personaje.findOne({id:id});
-        res.render('personaje', {personaje});
+        const personaje = await Personaje.findOne({id:id}, 'id name gender image url created');
+        const fecha = personaje.created.split('T', 1)[0];
+        /*const genero = personaje.gender;
+        if(genero="Female"){
+            genero="Femenino"
+        }else if(genero="Male"){
+            genero="Masculino"
+        }else{
+            genero="Unknow"
+        }*/
+        res.render('personaje', {personaje, fecha:fecha});
     } catch (error) {
         res.status(500).send(error);
     }
